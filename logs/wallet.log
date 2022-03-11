@@ -1,0 +1,232 @@
+{"@timestamp":"2022-03-11T14:18:29+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"6a764a8d-f266-482e-8d5a-130711f97a2f","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:52185"}
+{"@timestamp":"2022-03-11T14:18:29+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+http: panic serving [::1]:52185: reflect: call of reflect.Value.IsNil on struct Value
+goroutine 184 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1802 +0xb9
+panic({0xf63160, 0xc0005be828})
+	C:/Program Files/Go/src/runtime/panic.go:1047 +0x266
+reflect.Value.IsNil(...)
+	C:/Program Files/Go/src/reflect/value.go:1440
+wallet/internal/adapters/repositories/mongodb.(*walletInfra).GetAllWallet(0xc00051c000)
+	C:/Users/GPI/Documents/wallet-engine/internal/adapters/repositories/mongodb/wallet.go:145 +0x508
+wallet/internal/core/services.(*WalletService).GetAllWallet(0xc00007adc0)
+	C:/Users/GPI/Documents/wallet-engine/internal/core/services/wallet.go:35 +0x22
+wallet/internal/adapters/api.(*HTTPHandler).DebitWallet(0xc000056dd0, {0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Users/GPI/Documents/wallet-engine/internal/adapters/api/careProvider.go:55 +0x14b
+net/http.HandlerFunc.ServeHTTP(0xf69280, {0x1172d88, 0xc0005a0440}, 0xc0005bc3f0)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).routeHTTP(0xc0000881e0, {0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:442 +0x216
+net/http.HandlerFunc.ServeHTTP(0xc0001aa8a0, {0x1172d88, 0xc0005a0440}, 0x9ddc74)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0xc0000881e0, {0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:71 +0x48d
+github.com/go-chi/chi/v5.(*Mux).Mount.func1({0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:314 +0x19c
+net/http.HandlerFunc.ServeHTTP(0xf69280, {0x1172d88, 0xc0005a0440}, 0xc000438485)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).routeHTTP(0xc000088180, {0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:442 +0x216
+net/http.HandlerFunc.ServeHTTP(0xc0005886e0, {0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/cors.(*Cors).Handler.func1({0x1172d88, 0xc0005a0440}, 0xc000454000)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/cors@v1.2.0/cors.go:228 +0x1bd
+net/http.HandlerFunc.ServeHTTP(0x1175138, {0x1172d88, 0xc0005a0440}, 0x1539690)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0xc000088180, {0x1172d88, 0xc0005a0440}, 0xc00030a000)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:88 +0x442
+wallet/internal/core/middleware.LogRequest.func1({0x1172d28, 0xc000448000}, 0xc00030a000)
+	C:/Users/GPI/Documents/wallet-engine/internal/core/middleware/log-middleware.go:69 +0x727
+net/http.HandlerFunc.ServeHTTP(0x0, {0x1172d28, 0xc000448000}, 0x10)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+net/http.serverHandler.ServeHTTP({0x1171d60}, {0x1172d28, 0xc000448000}, 0xc00030a000)
+	C:/Program Files/Go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001d4aa0, {0x11751e0, 0xc0005a8450})
+	C:/Program Files/Go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3034 +0x4e8
+{"@timestamp":"2022-03-11T14:18:42+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet","method":"POST","wallet-correlation-id":"277e94dd-fb7d-4f9c-b64e-0f100373d94e","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:56104"}
+{"@timestamp":"2022-03-11T14:18:42+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:18:43+01:00","level":"INFO","message":"Persisting wallet with reference: 01114f5c-db3e-4a03-90c9-ac236506f11c completed successfully..."}
+{"@timestamp":"2022-03-11T14:18:47+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"dd0bbef3-9233-43e2-934a-3e81fe71e646","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:56104"}
+{"@timestamp":"2022-03-11T14:18:47+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+http: panic serving [::1]:56104: reflect: call of reflect.Value.IsNil on struct Value
+goroutine 188 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1802 +0xb9
+panic({0xf63160, 0xc00040c300})
+	C:/Program Files/Go/src/runtime/panic.go:1047 +0x266
+reflect.Value.IsNil(...)
+	C:/Program Files/Go/src/reflect/value.go:1440
+wallet/internal/adapters/repositories/mongodb.(*walletInfra).GetAllWallet(0xc00051c000)
+	C:/Users/GPI/Documents/wallet-engine/internal/adapters/repositories/mongodb/wallet.go:145 +0x508
+wallet/internal/core/services.(*WalletService).GetAllWallet(0xc000228000)
+	C:/Users/GPI/Documents/wallet-engine/internal/core/services/wallet.go:35 +0x22
+wallet/internal/adapters/api.(*HTTPHandler).DebitWallet(0xc000056dd0, {0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Users/GPI/Documents/wallet-engine/internal/adapters/api/careProvider.go:55 +0x14b
+net/http.HandlerFunc.ServeHTTP(0xf69280, {0x1172d88, 0xc00024a140}, 0xc0002fa930)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).routeHTTP(0xc0000881e0, {0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:442 +0x216
+net/http.HandlerFunc.ServeHTTP(0xc0005a8540, {0x1172d88, 0xc00024a140}, 0x9ddc74)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0xc0000881e0, {0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:71 +0x48d
+github.com/go-chi/chi/v5.(*Mux).Mount.func1({0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:314 +0x19c
+net/http.HandlerFunc.ServeHTTP(0xf69280, {0x1172d88, 0xc00024a140}, 0xc000432005)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).routeHTTP(0xc000088180, {0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:442 +0x216
+net/http.HandlerFunc.ServeHTTP(0xc0005886e0, {0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/cors.(*Cors).Handler.func1({0x1172d88, 0xc00024a140}, 0xc00014c200)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/cors@v1.2.0/cors.go:228 +0x1bd
+net/http.HandlerFunc.ServeHTTP(0x1175138, {0x1172d88, 0xc00024a140}, 0x1539690)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0xc000088180, {0x1172d88, 0xc00024a140}, 0xc00014c100)
+	C:/Users/GPI/Documents/go-workspace/bin/pkg/mod/github.com/go-chi/chi/v5@v5.0.7/mux.go:88 +0x442
+wallet/internal/core/middleware.LogRequest.func1({0x1172d28, 0xc00014e0e0}, 0xc00014c100)
+	C:/Users/GPI/Documents/wallet-engine/internal/core/middleware/log-middleware.go:69 +0x727
+net/http.HandlerFunc.ServeHTTP(0x0, {0x1172d28, 0xc00014e0e0}, 0x0)
+	C:/Program Files/Go/src/net/http/server.go:2047 +0x2f
+net/http.serverHandler.ServeHTTP({0x1171d60}, {0x1172d28, 0xc00014e0e0}, 0xc00014c100)
+	C:/Program Files/Go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001d50e0, {0x11751e0, 0xc0005a8450})
+	C:/Program Files/Go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3034 +0x4e8
+{"@timestamp":"2022-03-11T14:19:30+01:00","level":"INFO","message":"Initializing Mongo!"}
+{"@timestamp":"2022-03-11T14:19:30+01:00","level":"INFO","message":"Establishing mongoDB connection with given credentials..."}
+{"@timestamp":"2022-03-11T14:19:30+01:00","level":"INFO","message":"Confirming MongoDB Connection..."}
+{"@timestamp":"2022-03-11T14:19:33+01:00","level":"INFO","message":"Establishing Database collections and indexes..."}
+{"@timestamp":"2022-03-11T14:19:33+01:00","level":"Info","message":"Started HealthServiceApplication on http://localhost:30000 in 0s"}
+{"@timestamp":"2022-03-11T14:19:40+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"16bd78f9-e636-4ea3-b9b3-46543490c714","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57984"}
+{"@timestamp":"2022-03-11T14:19:40+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:19:40+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:19:40+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:19:40+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:21:38+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"cfe0f5fe-9ebe-46d8-a585-7ab8ab290846","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57984"}
+{"@timestamp":"2022-03-11T14:21:38+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:21:39+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:21:39+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:21:39+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:22:07+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"f8d65dc4-78f8-4107-9b4e-9271f601db1a","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57984"}
+{"@timestamp":"2022-03-11T14:22:07+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:22:07+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:22:07+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:22:08+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:23:58+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet","method":"POST","wallet-correlation-id":"96d75933-23ab-4c8c-bdbe-81b529f3ed17","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57984"}
+{"@timestamp":"2022-03-11T14:23:58+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:23:58+01:00","level":"INFO","message":"Persisting wallet with reference: cc62012f-00b8-420c-8279-1461784941a5 completed successfully..."}
+{"@timestamp":"2022-03-11T14:24:11+01:00","level":"INFO","message":"Initializing Mongo!"}
+{"@timestamp":"2022-03-11T14:24:11+01:00","level":"INFO","message":"Establishing mongoDB connection with given credentials..."}
+{"@timestamp":"2022-03-11T14:24:11+01:00","level":"INFO","message":"Confirming MongoDB Connection..."}
+{"@timestamp":"2022-03-11T14:24:14+01:00","level":"INFO","message":"Establishing Database collections and indexes..."}
+{"@timestamp":"2022-03-11T14:24:14+01:00","level":"Info","message":"Started HealthServiceApplication on http://localhost:30000 in 0s"}
+{"@timestamp":"2022-03-11T14:24:22+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"d0b75c19-9bc8-4e28-ae8b-ce88fa338c65","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:62820"}
+{"@timestamp":"2022-03-11T14:24:22+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:24:22+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:24:22+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:24:22+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:24:44+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"0f78b11c-bafd-4694-8d60-b5fb3980cfd6","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:62820"}
+{"@timestamp":"2022-03-11T14:24:44+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:24:44+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:24:44+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:24:44+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:32:55+01:00","level":"INFO","message":"Initializing Mongo!"}
+{"@timestamp":"2022-03-11T14:32:55+01:00","level":"INFO","message":"Establishing mongoDB connection with given credentials..."}
+{"@timestamp":"2022-03-11T14:32:55+01:00","level":"INFO","message":"Confirming MongoDB Connection..."}
+{"@timestamp":"2022-03-11T14:34:22+01:00","level":"INFO","message":"Initializing Mongo!"}
+{"@timestamp":"2022-03-11T14:34:22+01:00","level":"INFO","message":"Establishing mongoDB connection with given credentials..."}
+{"@timestamp":"2022-03-11T14:34:23+01:00","level":"INFO","message":"Confirming MongoDB Connection..."}
+{"@timestamp":"2022-03-11T14:34:26+01:00","level":"INFO","message":"Establishing Database collections and indexes..."}
+{"@timestamp":"2022-03-11T14:34:26+01:00","level":"Info","message":"Started HealthServiceApplication on http://localhost:30000 in 0s"}
+{"@timestamp":"2022-03-11T14:34:30+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet","method":"POST","wallet-correlation-id":"4b13ec7c-06eb-40c9-b046-f82e6e7d409f","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:54668"}
+{"@timestamp":"2022-03-11T14:34:30+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:34:31+01:00","level":"INFO","message":"Persisting wallet with reference: de48d256-8b87-4125-a319-05b35942cf01 completed successfully..."}
+{"@timestamp":"2022-03-11T14:34:42+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"37738b38-93a8-4eef-b8c0-da98cc00d885","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:54668"}
+{"@timestamp":"2022-03-11T14:34:42+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:34:42+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:34:42+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:34:43+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:34:48+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"4c2243aa-caaa-483e-a0b6-44a4138d67eb","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:54668"}
+{"@timestamp":"2022-03-11T14:34:48+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:34:49+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:34:49+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:34:49+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:36:26+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"076af592-fe11-4da3-8212-64b15cd690a6","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:54668"}
+{"@timestamp":"2022-03-11T14:36:26+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:36:26+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:36:26+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:36:26+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:36:34+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"8b88a076-87fb-4879-9009-399134e75cd3","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:54668"}
+{"@timestamp":"2022-03-11T14:36:34+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:36:34+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:36:34+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:36:34+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:37:47+01:00","level":"INFO","message":"Initializing Mongo!"}
+{"@timestamp":"2022-03-11T14:37:47+01:00","level":"INFO","message":"Establishing mongoDB connection with given credentials..."}
+{"@timestamp":"2022-03-11T14:37:48+01:00","level":"INFO","message":"Confirming MongoDB Connection..."}
+{"@timestamp":"2022-03-11T14:37:50+01:00","level":"INFO","message":"Establishing Database collections and indexes..."}
+{"@timestamp":"2022-03-11T14:37:50+01:00","level":"Info","message":"Started HealthServiceApplication on http://localhost:30000 in 0s"}
+{"@timestamp":"2022-03-11T14:37:55+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"433b5d86-43f8-4160-9c7e-29b7408f5f63","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57235"}
+{"@timestamp":"2022-03-11T14:37:55+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:37:55+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:37:55+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:37:55+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:38:08+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"a2cc9ffd-73ff-4dad-8018-9c17933c5f4f","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57235"}
+{"@timestamp":"2022-03-11T14:38:08+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:38:08+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:38:08+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:38:08+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:38:28+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"612f049b-9510-47bf-947d-3993add76e1e","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:57235"}
+{"@timestamp":"2022-03-11T14:38:28+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:38:28+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:38:28+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:38:28+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:42:57+01:00","level":"INFO","message":"Initializing Mongo!"}
+{"@timestamp":"2022-03-11T14:42:57+01:00","level":"INFO","message":"Establishing mongoDB connection with given credentials..."}
+{"@timestamp":"2022-03-11T14:42:57+01:00","level":"INFO","message":"Confirming MongoDB Connection..."}
+{"@timestamp":"2022-03-11T14:43:01+01:00","level":"INFO","message":"Establishing Database collections and indexes..."}
+{"@timestamp":"2022-03-11T14:43:01+01:00","level":"Info","message":"Started HealthServiceApplication on http://localhost:30000 in 0s"}
+{"@timestamp":"2022-03-11T14:43:01+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"bf0693e6-9996-4a15-80a2-79c4e3a2d940","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:01+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:01+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:01+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:02+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:07+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"b75d1cc1-33d3-42c1-8bd3-0d12c7ef0177","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:07+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:07+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:07+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:07+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:15+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"0ced3ec7-1ff7-4da5-b75f-43e487fee9ad","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:15+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:15+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:15+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:16+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:18+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/credit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"2acfd703-9500-4d4a-ad3b-6831ef883c02","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:18+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:19+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:19+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:19+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:27+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"f343f17f-9a42-4ac0-8e09-e064b419de5a","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:27+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:27+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:27+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:27+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:30+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"17bca659-d70e-43be-b3a2-bc90c23adee7","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:30+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:30+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:30+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:30+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:32+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"33b64058-65e9-46a3-8c2f-f58efbc2d66a","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:32+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:32+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:32+01:00","level":"INFO","message":"Persisting wallet with reference: "}
+{"@timestamp":"2022-03-11T14:43:32+01:00","level":"INFO","message":"Persisting wallet with reference: 4ae8e940-dc62-43d3-92b6-e01ff3d62acd completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:35+01:00","version":"1","level":"INFO","level_value":0,"statuscode":"200","message":"OK: no errors at the moment","logger_name":"","app_name":"","path":"/wallet/debit/4ae8e940-dc62-43d3-92b6-e01ff3d62acd","method":"POST","wallet-correlation-id":"734c2158-5583-4de8-83f8-4c6a793cbdc5","user-agent":"PostmanRuntime/7.29.0","wallet-response-time":"0s","wallet-application-host":"localhost:30000","remote_ip":"[::1]:51053"}
+{"@timestamp":"2022-03-11T14:43:35+01:00","level":"INFO","message":"Retrieving all wallet entries..."}
+{"@timestamp":"2022-03-11T14:43:35+01:00","level":"INFO","message":"Retrieving all wallet entries completed successfully..."}
+{"@timestamp":"2022-03-11T14:43:35+01:00","level":"INFO","message":"Persisting wallet with reference: "}
